@@ -6,7 +6,7 @@ from chat import Chat
 
 app = Flask(__name__)
 CORS(app)
-const port = process.env.PORT
+port = process.env.PORT
 
 @app.route('/chat', methods=['POST'])
 def chat():
