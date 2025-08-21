@@ -23,6 +23,8 @@ def chat():
         "response": response_text,
         "confidence": confidence
     })
-
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 if __name__ == '__main__':
     app.run(debug=True)
