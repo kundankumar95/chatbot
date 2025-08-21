@@ -1,8 +1,11 @@
 import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import nltk
+nltk.download("punkt")
+nltk.download("punkt_tab")
 
-# Import your chatbot function from chat.py
+# Import your chatbot function
 from chat import Chat
 
 app = Flask(__name__)
@@ -16,7 +19,6 @@ def chat():
     if not user_message:
         return jsonify({"error": "No message provided"}), 400
 
-    # Use your chatbot function here
     response_text, confidence = Chat(user_message)
 
     return jsonify({
