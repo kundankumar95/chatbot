@@ -6,7 +6,6 @@ from chat import Chat
 
 app = Flask(__name__)
 CORS(app)
-port = process.env.PORT
 
 @app.route('/chat', methods=['POST'])
 def chat():
@@ -23,8 +22,6 @@ def chat():
         "response": response_text,
         "confidence": confidence
     })
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+
 if __name__ == '__main__':
     app.run(debug=True)
